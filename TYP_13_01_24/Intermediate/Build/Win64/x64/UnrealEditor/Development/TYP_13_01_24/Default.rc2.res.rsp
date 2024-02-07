@@ -74,5 +74,5 @@
 /DBUILD_ICON_FILE_NAME="\"..\\Build\\Windows\\Resources\\Default.ico\""
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_IDENTIFIER=TYP_13_01_24
-/fo "C:\Users\ywe21afu\Documents\UnrealProjects\3YP_SEM2\130124\TYP_130124\TYP_13_01_24\Intermediate\Build\Win64\x64\UnrealEditor\Development\TYP_13_01_24\Default.rc2.res"
+/fo "C:\Users\ywe21afu\Documents\UnrealProjects\3YP_SEM2\130124\3YP_Push_070224\TYP_13_01_24\Intermediate\Build\Win64\x64\UnrealEditor\Development\TYP_13_01_24\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"
