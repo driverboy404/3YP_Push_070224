@@ -6,7 +6,8 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
-				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/UI/HUD.uasset"
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/UI/HUD.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/BP_AICharacter.uasset"
 			]
 		}
 	]
