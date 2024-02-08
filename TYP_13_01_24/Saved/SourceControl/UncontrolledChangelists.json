@@ -7,7 +7,34 @@
 			"files": [
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/UI/HUD.uasset",
-				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/BP_AICharacter.uasset"
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/BP_AICharacter.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/BP_Spawner.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/B/YQ/KT6JL4FVCNJJ9VFOCSF32J.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/B/EF/G3O7YJR3QU51OHQGRYB635.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/2W/U0XT0R08XQA6C15NK8ILFA.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/8/Y4/KY9ZXT77SAVGWBRTNCFCSC.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/8/CF/ZNIOCRD90Z70MMV9NMW778.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/8/80/RCXALNT3NG94XMV0V6D4XE.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/GI/GZM47KS5FPIQH5TLSYC1ME.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/5/DI/1JZHHCOBVQ2F5XRUWSES1X.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/PT/ZXUQMNLL9GZ2UNQ5D0R4A4.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/G2/DXY1ROMU8NVTUPH999VNGV.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/E5/6XON0XLIRNWJCBCE62P2VV.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/3/C8/Z38FT77DKZLKDXTQ7PZNM4.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/3/0O/4IRR0TBO7VGKMMYSZRQTB1.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/1/OD/YPSPM063O6XAJVKSDHY2JX.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/1/2J/R4MRTH8FEAO7ML1BCJFIZ2.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/0/NB/NWWEVRQSGT6ARVZ8HQLCM9.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/0/XV/VTAF5COFGLO9YT51MQCVTR.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/3/AI/0XWE3RNM2XQC0ST1KXG02O.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/5/4T/JCG6ZP6IU1UHUTRAO6F8Z4.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/8K/0OLPBOSZCPU1X7E3PCLCGF.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/I8/LH9T10MU22N3EEPTZ4GAFC.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/L5/1ZJ54FMA0DAL3I2Q8RFAIB.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/8/Z7/W1SXRCM1KAKBJOIZDLHZ47.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/9/6Q/FYHB4SWZVX4N7VBT3GKJMJ.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/D/58/61R9EBVV8U8JU5SMQSIMGH.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/8/XN/6PKB4JVARF24154BB11A5N.uasset"
 			]
 		}
 	]
