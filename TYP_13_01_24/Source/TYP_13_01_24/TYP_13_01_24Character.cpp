@@ -124,13 +124,13 @@ bool ATYP_13_01_24Character::GetHasRifle()
 // Function to apply damage to the character
 void ATYP_13_01_24Character::TakeDamage(float DamageAmount)
 {
-	// Subtract the damage from the health
+
 	Health -= DamageAmount;
 
 	// Check if health is below zero
 	if (Health <= 0)
 	{
-		// Implement actions for death
+
 		Die();
 	}
 }
@@ -138,8 +138,7 @@ void ATYP_13_01_24Character::TakeDamage(float DamageAmount)
 // Function to handle death
 void ATYP_13_01_24Character::Die()
 {
-	// Implement actions for death
-	// This could include playing death animations, destroying the actor, triggering respawn logic, etc.
+
 }
 
 
@@ -147,28 +146,28 @@ void ATYP_13_01_24Character::Reload()
 {
 	if (!bIsReloading)
 	{
-		// Start the reload process
+
 		bIsReloading = true;
 
-		// Perform the actual reload after a delay
+
 		PerformReload();
 	}
 }
 
 void ATYP_13_01_24Character::PerformReload()
 {
-	// Simulate reload time using a timer
+
 	FTimerHandle TimerHandle;
 	GetWorldTimerManager().SetTimer(TimerHandle, this, &ATYP_13_01_24Character::FinishReload, ReloadTime, false);
 }
 
 void ATYP_13_01_24Character::FinishReload()
 {
-	// Finish the reload process
+
 	Ammo = 20;
 	bIsReloading = false;
 
-	// You may want to notify the UI or perform other actions when the reload is complete
+
 }
 
 
