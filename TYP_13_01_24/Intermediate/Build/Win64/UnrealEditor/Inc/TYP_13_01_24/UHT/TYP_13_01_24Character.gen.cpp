@@ -608,7 +608,7 @@ void EmptyLinkFunctionForGeneratedCodeTYP_13_01_24Character() {}
 #endif
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_Ammo = { "Ammo", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATYP_13_01_24Character, Ammo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_Ammo_MetaData), Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_Ammo_MetaData) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_Ammo = { "Ammo", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATYP_13_01_24Character, Ammo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_Ammo_MetaData), Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_Ammo_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATYP_13_01_24Character_Statics::NewProp_ReloadTime_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -668,9 +668,9 @@ void EmptyLinkFunctionForGeneratedCodeTYP_13_01_24Character() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_TYP_13_01_24Character_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATYP_13_01_24Character, ATYP_13_01_24Character::StaticClass, TEXT("ATYP_13_01_24Character"), &Z_Registration_Info_UClass_ATYP_13_01_24Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATYP_13_01_24Character), 1821080168U) },
+		{ Z_Construct_UClass_ATYP_13_01_24Character, ATYP_13_01_24Character::StaticClass, TEXT("ATYP_13_01_24Character"), &Z_Registration_Info_UClass_ATYP_13_01_24Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATYP_13_01_24Character), 1152212826U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_TYP_13_01_24Character_h_4237846717(TEXT("/Script/TYP_13_01_24"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_TYP_13_01_24Character_h_4136949726(TEXT("/Script/TYP_13_01_24"),
 		Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_TYP_13_01_24Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_TYP_13_01_24Character_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

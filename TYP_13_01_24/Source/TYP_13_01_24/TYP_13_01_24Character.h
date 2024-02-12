@@ -79,7 +79,7 @@ public:
 		float Health;
 
 	// Health variable
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ammo", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo", meta = (AllowPrivateAccess = "true"))
 		int Ammo;
 
 
