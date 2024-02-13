@@ -38,6 +38,7 @@ ATYP_13_01_24Character::ATYP_13_01_24Character()
 	// Set default health value
 	Health = 72.0f;
 	Ammo = 20;
+	TotalAmmo = 50;
 
 	ReloadTime = 2.0f;
 	bIsReloading = false;
@@ -144,7 +145,7 @@ void ATYP_13_01_24Character::Die()
 
 void ATYP_13_01_24Character::Reload()
 {
-	if (!bIsReloading)
+	if (!bIsReloading && TotalAmmo > 0)
 	{
 
 		bIsReloading = true;
@@ -163,8 +164,17 @@ void ATYP_13_01_24Character::PerformReload()
 
 void ATYP_13_01_24Character::FinishReload()
 {
+	if (TotalAmmo + Ammo <= 20) {
+		Ammo += TotalAmmo;
+		TotalAmmo = 0;
+	}
 
-	Ammo = 20;
+	else {
+		int temp = Ammo;
+		Ammo = 20;
+		TotalAmmo = TotalAmmo - (20 - temp);
+	}
+
 	bIsReloading = false;
 
 
