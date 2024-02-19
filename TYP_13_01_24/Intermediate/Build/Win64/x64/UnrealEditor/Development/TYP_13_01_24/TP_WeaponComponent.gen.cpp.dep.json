@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\ywe21afu\\documents\\unrealprojects\\3yp_sem2\\130124\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealeditor\\inc\\typ_13_01_24\\uht\\tp_weaponcomponent.gen.cpp",
+        "Source": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealeditor\\inc\\typ_13_01_24\\uht\\tp_weaponcomponent.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\ywe21afu\\documents\\unrealprojects\\3yp_sem2\\130124\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\typ_13_01_24editor\\development\\unrealed\\sharedpch.unrealed.cpp17.inclorderunreal5_1.h.pch",
+        "PCH": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\typ_13_01_24editor\\development\\unrealed\\sharedpch.unrealed.cpp17.inclorderunreal5_1.h.pch",
         "Includes": [
-            "c:\\users\\ywe21afu\\documents\\unrealprojects\\3yp_sem2\\130124\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\typ_13_01_24\\definitions.typ_13_01_24.h",
-            "c:\\users\\ywe21afu\\documents\\unrealprojects\\3yp_sem2\\130124\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\tp_weaponcomponent.h",
-            "c:\\users\\ywe21afu\\documents\\unrealprojects\\3yp_sem2\\130124\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealeditor\\inc\\typ_13_01_24\\uht\\tp_weaponcomponent.generated.h"
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\typ_13_01_24\\definitions.typ_13_01_24.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\tp_weaponcomponent.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealeditor\\inc\\typ_13_01_24\\uht\\tp_weaponcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

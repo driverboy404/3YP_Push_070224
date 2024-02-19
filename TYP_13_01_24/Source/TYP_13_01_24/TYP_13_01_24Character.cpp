@@ -171,7 +171,7 @@ void ATYP_13_01_24Character::FinishReload()
 
 	else {
 		int temp = Ammo;
-		Ammo = 20;
+		Ammo = 19;
 		TotalAmmo = TotalAmmo - (20 - temp);
 	}
 
