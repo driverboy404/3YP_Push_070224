@@ -119,6 +119,7 @@
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/StateTree/STT_HealthPackNearby.uasset",
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/StateTree/STT_FindHidingSpot.uasset",
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/StateTree/STT_MoveToNearestHP.uasset",
+				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/StateTree/STT_MoveToNearestAP.uasset",
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/BTT_FindNearestAmmoPack.uasset",
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/ThirdPerson/Blueprints/AIEssentials/EQS/EQS_RepositionToShoot.uasset",
 				"C:/Users/ywe21afu/Documents/UnrealProjects/3YP_SEM2/130124/3YP_Push_070224/TYP_13_01_24/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/B/YQ/KT6JL4FVCNJJ9VFOCSF32J.uasset",
