@@ -21,25 +21,70 @@ UGOAPComponent::UGOAPComponent()
 
     FAction GatherAmmo;
     GatherAmmo.Name = TEXT("GatherAmmo");
-    GatherAmmo.Preconditions.Add(TEXT("lowAmmo"), true);
-    GatherAmmo.Effects.Add(TEXT("lowAmmo"), false);
+    GatherAmmo.Preconditions.Add(TEXT("ammoLessEqual10"), true);
+    GatherAmmo.Preconditions.Add(TEXT("hasEnemy"), false);
+    GatherAmmo.Effects.Add(TEXT("ammoLessEqual10"), false);
+    GatherAmmo.Effects.Add(TEXT("ammoLessEqual5"), false);
     GatherAmmo.Cost = 1;
     Actions.Add(GatherAmmo);
 
+
+
+
+
     FAction GatherAmmoAndShoot;
     GatherAmmoAndShoot.Name = TEXT("GatherAmmoAndShoot");
-    GatherAmmoAndShoot.Preconditions.Add(TEXT("lowAmmo"), true);
+
+    GatherAmmoAndShoot.Preconditions.Add(TEXT("ammoGreater0"), true);
     GatherAmmoAndShoot.Preconditions.Add(TEXT("hasEnemy"), true);
-    GatherAmmoAndShoot.Effects.Add(TEXT("lowAmmo"), false);
+    GatherAmmoAndShoot.Preconditions.Add(TEXT("ammoLessEqual5"), true);
+    
+
+    GatherAmmoAndShoot.Effects.Add(TEXT("ammoLessEqual5"), false);
+    GatherAmmoAndShoot.Effects.Add(TEXT("ammoLessEqual10"), false);
     GatherAmmoAndShoot.Cost = 1;
     Actions.Add(GatherAmmoAndShoot);
 
+
+
+
+
+
     FAction GatherHealth;
     GatherHealth.Name = TEXT("GatherHealth");
-    GatherHealth.Preconditions.Add(TEXT("lowHealth"), true);
-    GatherHealth.Effects.Add(TEXT("lowHealth"), false);
+    GatherHealth.Preconditions.Add(TEXT("healthGreater50"), false);
+    GatherHealth.Preconditions.Add(TEXT("hasEnemy"), false);
+    GatherHealth.Preconditions.Add(TEXT("healthPackNearby"), true);
+    GatherHealth.Effects.Add(TEXT("healthGreater50"), true);
     GatherHealth.Cost = 1;
     Actions.Add(GatherHealth);
+
+
+
+    FAction GatherHealthAndShoot;
+    GatherHealthAndShoot.Name = TEXT("GatherHealthAndShoot");
+    GatherHealthAndShoot.Preconditions.Add(TEXT("healthLessEqual30"), true);
+    GatherHealthAndShoot.Preconditions.Add(TEXT("hasEnemy"), true);
+    GatherHealthAndShoot.Preconditions.Add(TEXT("healthPackNearby"), true);
+
+    GatherHealthAndShoot.Effects.Add(TEXT("healthLessEqual30"), false);
+    GatherHealthAndShoot.Effects.Add(TEXT("healthGreater50"), true);
+    GatherHealthAndShoot.Cost = 1;
+    Actions.Add(GatherHealthAndShoot);
+
+
+
+    FAction MoveToCover;
+    MoveToCover.Name = TEXT("MoveToCover");
+    MoveToCover.Preconditions.Add(TEXT("healthLessEqual30"), true);
+    MoveToCover.Preconditions.Add(TEXT("hasEnemy"), true);
+    MoveToCover.Preconditions.Add(TEXT("healthPackNearby"), false);
+    MoveToCover.Effects.Add(TEXT("healthPackNearby"), true);
+    MoveToCover.Effects.Add(TEXT("hasEnemy"), false);
+    MoveToCover.Cost = 1;
+    Actions.Add(MoveToCover);
+
+
 
     FAction Patrol;
     Patrol.Name = TEXT("Patrol");
@@ -216,16 +261,17 @@ void UGOAPComponent::TestGOAP()
 
 void UGOAPComponent::TestGOAP2(FWorldState InitialState){
     FGoal Goal;
-    Goal.Conditions.Add(TEXT("lowAmmo"), false);
-    Goal.Conditions.Add(TEXT("lowHealth"), false);
+    Goal.Conditions.Add(TEXT("ammoLessEqual10"), false);
+    Goal.Conditions.Add(TEXT("ammoLessEqual5"), false);
+    Goal.Conditions.Add(TEXT("ammoGreater0"), true);
     Goal.Conditions.Add(TEXT("hasEnemy"), true);
+    Goal.Conditions.Add(TEXT("healthGreater50"), true);
+    Goal.Conditions.Add(TEXT("healthLessEqual30"), false);
+    Goal.Conditions.Add(TEXT("healthPackNearby"), true);
+    
 
 
-    /*UE_LOG(LogTemp, Warning, TEXT("Initial State values:"));
-    for (const auto& Pair : InitialState.States)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("%s = %s"), *Pair.Key, Pair.Value ? TEXT("true") : TEXT("false"));
-    }*/
+
 
 
     TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
