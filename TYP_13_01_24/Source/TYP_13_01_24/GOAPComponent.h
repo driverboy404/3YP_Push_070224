@@ -56,6 +56,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void TestGOAP();
 
+
+	UFUNCTION(BlueprintCallable)
+	void TestGOAP2(FWorldState InitialState);
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

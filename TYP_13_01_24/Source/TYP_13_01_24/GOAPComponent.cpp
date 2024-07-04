@@ -8,10 +8,10 @@ UGOAPComponent::UGOAPComponent()
     PrimaryComponentTick.bCanEverTick = true;
 
     // Define initial state
-    FWorldState InitialState;
-    InitialState.States.Add(TEXT("lowHealth"), false);
-    InitialState.States.Add(TEXT("lowAmmo"), true);
-    InitialState.States.Add(TEXT("hasEnemy"), false);
+    //FWorldState InitialState;
+    //InitialState.States.Add(TEXT("lowHealth"), false);
+    //InitialState.States.Add(TEXT("lowAmmo"), true);
+    //InitialState.States.Add(TEXT("hasEnemy"), false);
 
     
     CurrentState.States.Add(TEXT("lowHealth"), false);
@@ -200,9 +200,37 @@ void UGOAPComponent::TestGOAP()
     Goal.Conditions.Add(TEXT("hasEnemy"), true);
 
     
-    TArray<FAction> PlanActions = FindPlanAStar(CurrentState, Goal, Actions);
+    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
 
     
+    int32 TotalCost = 0;
+    UE_LOG(LogTemp, Warning, TEXT("Plan found with %d actions:"), PlanActions.Num());
+    for (const auto& Action : PlanActions)
+    {
+        TotalCost += Action.Cost;
+        UE_LOG(LogTemp, Warning, TEXT("Action: %s"), *Action.Name);
+    }
+    UE_LOG(LogTemp, Warning, TEXT("Total cost: %d"), TotalCost);
+}
+
+
+void UGOAPComponent::TestGOAP2(FWorldState InitialState){
+    FGoal Goal;
+    Goal.Conditions.Add(TEXT("lowAmmo"), false);
+    Goal.Conditions.Add(TEXT("lowHealth"), false);
+    Goal.Conditions.Add(TEXT("hasEnemy"), true);
+
+
+    /*UE_LOG(LogTemp, Warning, TEXT("Initial State values:"));
+    for (const auto& Pair : InitialState.States)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("%s = %s"), *Pair.Key, Pair.Value ? TEXT("true") : TEXT("false"));
+    }*/
+
+
+    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
+
+
     int32 TotalCost = 0;
     UE_LOG(LogTemp, Warning, TEXT("Plan found with %d actions:"), PlanActions.Num());
     for (const auto& Action : PlanActions)
