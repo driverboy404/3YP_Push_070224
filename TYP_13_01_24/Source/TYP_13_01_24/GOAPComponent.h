@@ -67,6 +67,13 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "GOAP")
 	TArray<FAction> FindPlanAStar(const FWorldState& InitialState, const FGoal& Goal, const TArray<FAction>& Actions);
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GOAP")
+	TArray<FAction> Actions; // Store actions for easy access
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GOAP")
+	FWorldState CurrentState;
+
+
 private:
 	bool CheckPreconditions(const FWorldState& State, const TMap<FString, bool>& Preconditions) const;
 	void ApplyEffects(FWorldState& State, const TMap<FString, bool>& Effects) const;
@@ -78,6 +85,7 @@ private:
 	void PushNode(TArray<struct FNode*>& Queue, struct FNode* Node);
 	struct FNode* PopNode(TArray<struct FNode*>& Queue);
 
-	TArray<FAction> Actions; // Store actions for easy access
+
+
 		
 };

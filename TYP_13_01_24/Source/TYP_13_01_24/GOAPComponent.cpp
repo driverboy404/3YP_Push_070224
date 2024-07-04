@@ -5,12 +5,7 @@
 
 UGOAPComponent::UGOAPComponent()
 {
-    PrimaryComponentTick.bCanEverTick = false;
-}
-
-void UGOAPComponent::BeginPlay()
-{
-    Super::BeginPlay();
+    PrimaryComponentTick.bCanEverTick = true;
 
     // Define initial state
     FWorldState InitialState;
@@ -18,12 +13,17 @@ void UGOAPComponent::BeginPlay()
     InitialState.States.Add(TEXT("lowAmmo"), true);
     InitialState.States.Add(TEXT("hasEnemy"), false);
 
+    
+    CurrentState.States.Add(TEXT("lowHealth"), false);
+    CurrentState.States.Add(TEXT("lowAmmo"), true);
+    CurrentState.States.Add(TEXT("hasEnemy"), false);
+
 
     FAction GatherAmmo;
     GatherAmmo.Name = TEXT("GatherAmmo");
     GatherAmmo.Preconditions.Add(TEXT("lowAmmo"), true);
     GatherAmmo.Effects.Add(TEXT("lowAmmo"), false);
-    GatherAmmo.Cost = 1;
+    GatherAmmo.Cost = 10;
     Actions.Add(GatherAmmo);
 
     FAction GatherAmmoAndShoot;
@@ -47,23 +47,11 @@ void UGOAPComponent::BeginPlay()
     Patrol.Effects.Add(TEXT("hasEnemy"), true);
     Patrol.Cost = 1;
     Actions.Add(Patrol);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void UGOAPComponent::BeginPlay()
+{
+    Super::BeginPlay();
 
 
 }
@@ -145,6 +133,10 @@ FNode* UGOAPComponent::PopNode(TArray<FNode*>& Queue)
     return Node;
 }
 
+
+
+
+
 TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, const FGoal& Goal, const TArray<FAction>& MyActions)
 {
     TArray<FNode*> OpenList;
@@ -155,11 +147,11 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
     while (OpenList.Num() > 0)
     {
         FNode* CurrentNode = PopNode(OpenList);
-        UE_LOG(LogTemp, Warning, TEXT("Popping"));
+        
 
         if (CheckPreconditions(CurrentNode->State, Goal.Conditions))
         {
-            UE_LOG(LogTemp, Warning, TEXT("Plan Found!!!"));
+            
             TArray<FAction> Plan;
             FNode* Node = CurrentNode;
             while (Node->Parent != nullptr)
@@ -173,10 +165,10 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
 
         for (const auto& Action : MyActions)
         {
-            UE_LOG(LogTemp, Warning, TEXT("Checking Action"));
+            
             if (CheckPreconditions(CurrentNode->State, Action.Preconditions))
             {
-                UE_LOG(LogTemp, Warning, TEXT("Preconditions met!"));
+                
                 FWorldState NewState = CurrentNode->State;
                 ApplyEffects(NewState, Action.Effects);
 
@@ -186,7 +178,7 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
             }
         }
     }
-    UE_LOG(LogTemp, Warning, TEXT("Failure to find plan"));
+    
     return {};
 }
 
@@ -197,7 +189,7 @@ void UGOAPComponent::TestGOAP()
 {
     
     FWorldState InitialState;
-    InitialState.States.Add(TEXT("lowHealth"), false);
+    InitialState.States.Add(TEXT("lowHealth"), true);
     InitialState.States.Add(TEXT("lowAmmo"), true);
     InitialState.States.Add(TEXT("hasEnemy"), false);
 
@@ -208,7 +200,7 @@ void UGOAPComponent::TestGOAP()
     Goal.Conditions.Add(TEXT("hasEnemy"), true);
 
     
-    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
+    TArray<FAction> PlanActions = FindPlanAStar(CurrentState, Goal, Actions);
 
     
     int32 TotalCost = 0;
