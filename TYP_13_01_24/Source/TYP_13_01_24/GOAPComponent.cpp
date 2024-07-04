@@ -23,7 +23,7 @@ UGOAPComponent::UGOAPComponent()
     GatherAmmo.Name = TEXT("GatherAmmo");
     GatherAmmo.Preconditions.Add(TEXT("lowAmmo"), true);
     GatherAmmo.Effects.Add(TEXT("lowAmmo"), false);
-    GatherAmmo.Cost = 10;
+    GatherAmmo.Cost = 1;
     Actions.Add(GatherAmmo);
 
     FAction GatherAmmoAndShoot;
