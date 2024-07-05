@@ -24,7 +24,8 @@ UGOAPComponent::UGOAPComponent()
     GatherAmmo.Preconditions.Add(TEXT("ammoLessEqual10"), true);
     GatherAmmo.Preconditions.Add(TEXT("hasEnemy"), false);
     GatherAmmo.Effects.Add(TEXT("ammoLessEqual10"), false);
-    GatherAmmo.Effects.Add(TEXT("ammoLessEqual5"), false);
+    GatherAmmo.Effects.Add(TEXT("ammoGreater0"), true);
+    //GatherAmmo.Effects.Add(TEXT("ammoLessEqual5"), false);
     GatherAmmo.Cost = 1;
     Actions.Add(GatherAmmo);
     Actions2.Add(GatherAmmo);
@@ -49,12 +50,12 @@ UGOAPComponent::UGOAPComponent()
     MoveToCover.Effects.Add(TEXT("hasEnemy"), false);
     MoveToCover.Cost = 1;
     Actions.Add(MoveToCover);
-    Actions2.Add(MoveToCover);
+    Actions2.Add(MoveToCover)  ;
 
 
     FAction WaitAtCover;
     WaitAtCover.Name = TEXT("WaitAtCover");
-    WaitAtCover.Preconditions.Add(TEXT("healthLessEqual30"), false);
+    //WaitAtCover.Preconditions.Add(TEXT("healthLessEqual30"), false);
     WaitAtCover.Preconditions.Add(TEXT("hasEnemy"), false);
     WaitAtCover.Preconditions.Add(TEXT("healthPackNearby"), false);
     WaitAtCover.Effects.Add(TEXT("healthPackNearby"), true);
@@ -222,8 +223,9 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
         {
             
             if (CheckPreconditions(CurrentNode->State, Action.Preconditions))
-            {
-                
+            {   
+                UE_LOG(LogTemp, Warning, TEXT("CURRENT STATE: %s"), *StateToString(CurrentNode->State));
+                UE_LOG(LogTemp, Warning, TEXT("FINDING PATH: Action: %s"), *Action.Name);
                 FWorldState NewState = CurrentNode->State;
                 ApplyEffects(NewState, Action.Effects);
 
