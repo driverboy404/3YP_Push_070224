@@ -44,6 +44,7 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<struct FGoal>();
 #define FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execFindPlanAStar); \
+	DECLARE_FUNCTION(execTestGOAP3); \
 	DECLARE_FUNCTION(execTestGOAP2); \
 	DECLARE_FUNCTION(execTestGOAP);
 

@@ -291,6 +291,14 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 		*(TArray<FAction>*)Z_Param__Result=P_THIS->FindPlanAStar(Z_Param_Out_InitialState,Z_Param_Out_Goal,Z_Param_Out_Actions);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UGOAPComponent::execTestGOAP3)
+	{
+		P_GET_STRUCT(FWorldState,Z_Param_InitialState);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TArray<FAction>*)Z_Param__Result=P_THIS->TestGOAP3(Z_Param_InitialState);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UGOAPComponent::execTestGOAP2)
 	{
 		P_GET_STRUCT(FWorldState,Z_Param_InitialState);
@@ -313,6 +321,7 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 			{ "FindPlanAStar", &UGOAPComponent::execFindPlanAStar },
 			{ "TestGOAP", &UGOAPComponent::execTestGOAP },
 			{ "TestGOAP2", &UGOAPComponent::execTestGOAP2 },
+			{ "TestGOAP3", &UGOAPComponent::execTestGOAP3 },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -455,6 +464,47 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics
+	{
+		struct GOAPComponent_eventTestGOAP3_Parms
+		{
+			FWorldState InitialState;
+			TArray<FAction> ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_InitialState;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::NewProp_InitialState = { "InitialState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GOAPComponent_eventTestGOAP3_Parms, InitialState), Z_Construct_UScriptStruct_FWorldState, METADATA_PARAMS(0, nullptr) }; // 462655785
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAction, METADATA_PARAMS(0, nullptr) }; // 2595321673
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GOAPComponent_eventTestGOAP3_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 2595321673
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::NewProp_InitialState,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::NewProp_ReturnValue_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GOAPComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGOAPComponent, nullptr, "TestGOAP3", nullptr, nullptr, Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::GOAPComponent_eventTestGOAP3_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::GOAPComponent_eventTestGOAP3_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UGOAPComponent_TestGOAP3()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGOAPComponent_TestGOAP3_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UGOAPComponent);
 	UClass* Z_Construct_UClass_UGOAPComponent_NoRegister()
 	{
@@ -494,6 +544,7 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 		{ &Z_Construct_UFunction_UGOAPComponent_FindPlanAStar, "FindPlanAStar" }, // 2966349590
 		{ &Z_Construct_UFunction_UGOAPComponent_TestGOAP, "TestGOAP" }, // 3071004679
 		{ &Z_Construct_UFunction_UGOAPComponent_TestGOAP2, "TestGOAP2" }, // 3930329729
+		{ &Z_Construct_UFunction_UGOAPComponent_TestGOAP3, "TestGOAP3" }, // 3881661777
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UGOAPComponent_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -592,9 +643,9 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 		{ FGoal::StaticStruct, Z_Construct_UScriptStruct_FGoal_Statics::NewStructOps, TEXT("Goal"), &Z_Registration_Info_UScriptStruct_Goal, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGoal), 88261655U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGOAPComponent, UGOAPComponent::StaticClass, TEXT("UGOAPComponent"), &Z_Registration_Info_UClass_UGOAPComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGOAPComponent), 1109489135U) },
+		{ Z_Construct_UClass_UGOAPComponent, UGOAPComponent::StaticClass, TEXT("UGOAPComponent"), &Z_Registration_Info_UClass_UGOAPComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGOAPComponent), 3893073586U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_1454550027(TEXT("/Script/TYP_13_01_24"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_2378710448(TEXT("/Script/TYP_13_01_24"),
 		Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ScriptStructInfo),
 		nullptr, 0);
