@@ -21,11 +21,8 @@ UGOAPComponent::UGOAPComponent()
 
     FAction GatherAmmo;
     GatherAmmo.Name = TEXT("GatherAmmo");
-    GatherAmmo.Preconditions.Add(TEXT("ammoLessEqual10"), true);
-    //GatherAmmo.Preconditions.Add(TEXT("hasEnemy"), false);
-    GatherAmmo.Effects.Add(TEXT("ammoLessEqual10"), false);
+    GatherAmmo.Preconditions.Add(TEXT("ammoGreater0"), false);
     GatherAmmo.Effects.Add(TEXT("ammoGreater0"), true);
-    //GatherAmmo.Effects.Add(TEXT("ammoLessEqual5"), false);
     GatherAmmo.Cost = 1;
     Actions.Add(GatherAmmo);
     Actions2.Add(GatherAmmo);
@@ -34,7 +31,6 @@ UGOAPComponent::UGOAPComponent()
     FAction GatherHealth;
     GatherHealth.Name = TEXT("GatherHealth");
     GatherHealth.Preconditions.Add(TEXT("healthGreater50"), false);
-    //GatherHealth.Preconditions.Add(TEXT("hasEnemy"), false);
     GatherHealth.Preconditions.Add(TEXT("healthPackNearby"), true);
     GatherHealth.Effects.Add(TEXT("healthGreater50"), true);
     GatherHealth.Cost = 1;
@@ -44,12 +40,9 @@ UGOAPComponent::UGOAPComponent()
 
     FAction MoveToCover;
     MoveToCover.Name = TEXT("MoveToCover");
-    MoveToCover.Preconditions.Add(TEXT("healthLessEqual30"), true);
     MoveToCover.Preconditions.Add(TEXT("healthGreater50"), false);
-    //MoveToCover.Preconditions.Add(TEXT("hasEnemy"), true);
     MoveToCover.Preconditions.Add(TEXT("healthPackNearby"), false);
     MoveToCover.Effects.Add(TEXT("healthPackNearby"), true);
-    MoveToCover.Effects.Add(TEXT("hasEnemy"), false);
     MoveToCover.Cost = 1;
     Actions.Add(MoveToCover);
     Actions2.Add(MoveToCover)  ;
@@ -69,10 +62,10 @@ UGOAPComponent::UGOAPComponent()
     FAction AttackEnemy;
     AttackEnemy.Name = TEXT("AttackEnemy");
     AttackEnemy.Preconditions.Add(TEXT("hasEnemy"), true);
-    AttackEnemy.Preconditions.Add(TEXT("healthLessEqual30"), false);
-    AttackEnemy.Preconditions.Add(TEXT("ammoLessEqual5"), false);
+    AttackEnemy.Preconditions.Add(TEXT("healthGreater50"), true);
+    AttackEnemy.Preconditions.Add(TEXT("ammoGreater0"), true);
     AttackEnemy.Effects.Add(TEXT("isAttacking"), true);
-    AttackEnemy.Cost = 1;
+    AttackEnemy.Cost = 100;
     Actions.Add(AttackEnemy);
     Actions2.Add(AttackEnemy);
 
@@ -81,7 +74,7 @@ UGOAPComponent::UGOAPComponent()
     Patrol.Name = TEXT("Patrol");
     Patrol.Preconditions.Add(TEXT("hasEnemy"), false);
     Patrol.Effects.Add(TEXT("hasEnemy"), true);
-    Patrol.Cost = 1;
+    Patrol.Cost = 100;
     Actions.Add(Patrol);
     Actions2.Add(Patrol);
 
@@ -226,8 +219,7 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
             
             if (CheckPreconditions(CurrentNode->State, Action.Preconditions))
             {   
-                UE_LOG(LogTemp, Warning, TEXT("CURRENT STATE: %s"), *StateToString(CurrentNode->State));
-                UE_LOG(LogTemp, Warning, TEXT("FINDING PATH: Action: %s"), *Action.Name);
+
                 FWorldState NewState = CurrentNode->State;
                 ApplyEffects(NewState, Action.Effects);
 
@@ -265,13 +257,13 @@ void UGOAPComponent::TestGOAP()
 
     
     int32 TotalCost = 0;
-    UE_LOG(LogTemp, Warning, TEXT("Plan found with %d actions:"), PlanActions.Num());
+    
     for (const auto& Action : PlanActions)
     {
         TotalCost += Action.Cost;
-        UE_LOG(LogTemp, Warning, TEXT("Action: %s"), *Action.Name);
+        
     }
-    UE_LOG(LogTemp, Warning, TEXT("Total cost: %d"), TotalCost);
+    
 }
 
 
@@ -303,13 +295,13 @@ void UGOAPComponent::TestGOAP2(FWorldState InitialState){
 
 
     int32 TotalCost = 0;
-    UE_LOG(LogTemp, Warning, TEXT("Plan found with %d actions:"), PlanActions.Num());
+    
     for (const auto& Action : PlanActions)
     {
         TotalCost += Action.Cost;
-        UE_LOG(LogTemp, Warning, TEXT("Action: %s"), *Action.Name);
+        
     }
-    UE_LOG(LogTemp, Warning, TEXT("Total cost: %d"), TotalCost);
+    
 }
 
 
@@ -326,11 +318,11 @@ TArray<FAction> UGOAPComponent::TestGOAP3(FWorldState InitialState)
     //Goal.Conditions.Add(TEXT("healthPackNearby"), true);
     Goal.Conditions.Add(TEXT("isAttacking"), true);
     Goal.Conditions.Add(TEXT("healthGreater50"), true);
-    Goal.Conditions.Add(TEXT("ammoLessEqual10"), false);
+    Goal.Conditions.Add(TEXT("ammoGreater0"), true);
 
 
     //FString InitialStateString = StateToString(InitialState);
-    UE_LOG(LogTemp, Warning, TEXT("Initial State: %s"), *StateToString(InitialState));
+    
 
 
 
