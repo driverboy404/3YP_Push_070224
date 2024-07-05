@@ -14,9 +14,9 @@ UGOAPComponent::UGOAPComponent()
     //InitialState.States.Add(TEXT("hasEnemy"), false);
 
     
-    CurrentState.States.Add(TEXT("lowHealth"), false);
-    CurrentState.States.Add(TEXT("lowAmmo"), true);
-    CurrentState.States.Add(TEXT("hasEnemy"), false);
+    //CurrentState.States.Add(TEXT("lowHealth"), false);
+    //CurrentState.States.Add(TEXT("lowAmmo"), true);
+    //CurrentState.States.Add(TEXT("hasEnemy"), false);
 
 
     FAction GatherAmmo;
@@ -29,27 +29,6 @@ UGOAPComponent::UGOAPComponent()
     Actions.Add(GatherAmmo);
 
 
-
-
-
-    FAction GatherAmmoAndShoot;
-    GatherAmmoAndShoot.Name = TEXT("GatherAmmoAndShoot");
-
-    GatherAmmoAndShoot.Preconditions.Add(TEXT("ammoGreater0"), true);
-    GatherAmmoAndShoot.Preconditions.Add(TEXT("hasEnemy"), true);
-    GatherAmmoAndShoot.Preconditions.Add(TEXT("ammoLessEqual5"), true);
-    
-
-    GatherAmmoAndShoot.Effects.Add(TEXT("ammoLessEqual5"), false);
-    GatherAmmoAndShoot.Effects.Add(TEXT("ammoLessEqual10"), false);
-    GatherAmmoAndShoot.Cost = 1;
-    Actions.Add(GatherAmmoAndShoot);
-
-
-
-
-
-
     FAction GatherHealth;
     GatherHealth.Name = TEXT("GatherHealth");
     GatherHealth.Preconditions.Add(TEXT("healthGreater50"), false);
@@ -60,30 +39,34 @@ UGOAPComponent::UGOAPComponent()
     Actions.Add(GatherHealth);
 
 
-
-    FAction GatherHealthAndShoot;
-    GatherHealthAndShoot.Name = TEXT("GatherHealthAndShoot");
-    GatherHealthAndShoot.Preconditions.Add(TEXT("healthLessEqual30"), true);
-    GatherHealthAndShoot.Preconditions.Add(TEXT("hasEnemy"), true);
-    GatherHealthAndShoot.Preconditions.Add(TEXT("healthPackNearby"), true);
-
-    GatherHealthAndShoot.Effects.Add(TEXT("healthLessEqual30"), false);
-    GatherHealthAndShoot.Effects.Add(TEXT("healthGreater50"), true);
-    GatherHealthAndShoot.Cost = 1;
-    Actions.Add(GatherHealthAndShoot);
-
-
-
     FAction MoveToCover;
     MoveToCover.Name = TEXT("MoveToCover");
     MoveToCover.Preconditions.Add(TEXT("healthLessEqual30"), true);
     MoveToCover.Preconditions.Add(TEXT("hasEnemy"), true);
     MoveToCover.Preconditions.Add(TEXT("healthPackNearby"), false);
-    MoveToCover.Effects.Add(TEXT("healthPackNearby"), true);
     MoveToCover.Effects.Add(TEXT("hasEnemy"), false);
     MoveToCover.Cost = 1;
     Actions.Add(MoveToCover);
 
+
+    FAction WaitAtCover;
+    WaitAtCover.Name = TEXT("WaitAtCover");
+    WaitAtCover.Preconditions.Add(TEXT("healthLessEqual30"), false);
+    WaitAtCover.Preconditions.Add(TEXT("hasEnemy"), false);
+    WaitAtCover.Preconditions.Add(TEXT("healthPackNearby"), false);
+    WaitAtCover.Effects.Add(TEXT("healthPackNearby"), true);
+    WaitAtCover.Cost = 1;
+    Actions.Add(WaitAtCover);
+
+
+    FAction AttackEnemy;
+    AttackEnemy.Name = TEXT("AttackEnemy");
+    AttackEnemy.Preconditions.Add(TEXT("hasEnemy"), true);
+    AttackEnemy.Preconditions.Add(TEXT("healthLessEqual30"), false);
+    AttackEnemy.Preconditions.Add(TEXT("ammoLessEqual5"), false);
+    AttackEnemy.Effects.Add(TEXT("isAttacking"), true);
+    AttackEnemy.Cost = 1;
+    Actions.Add(AttackEnemy);
 
 
     FAction Patrol;
@@ -185,6 +168,9 @@ FNode* UGOAPComponent::PopNode(TArray<FNode*>& Queue)
 TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, const FGoal& Goal, const TArray<FAction>& MyActions)
 {
     TArray<FNode*> OpenList;
+
+    FString InitialStateString = StateToString(InitialState);
+    
     
     FNode* StartNode = new FNode(InitialState, 0, CalculateHeuristic(InitialState, Goal), nullptr, { "", {}, {}, 0 });
     PushNode(OpenList, StartNode);
@@ -259,15 +245,24 @@ void UGOAPComponent::TestGOAP()
 }
 
 
+
+
+
+
 void UGOAPComponent::TestGOAP2(FWorldState InitialState){
     FGoal Goal;
-    Goal.Conditions.Add(TEXT("ammoLessEqual10"), false);
-    Goal.Conditions.Add(TEXT("ammoLessEqual5"), false);
-    Goal.Conditions.Add(TEXT("ammoGreater0"), true);
-    Goal.Conditions.Add(TEXT("hasEnemy"), true);
-    Goal.Conditions.Add(TEXT("healthGreater50"), true);
-    Goal.Conditions.Add(TEXT("healthLessEqual30"), false);
-    Goal.Conditions.Add(TEXT("healthPackNearby"), true);
+    //Goal.Conditions.Add(TEXT("ammoLessEqual10"), false);
+    //Goal.Conditions.Add(TEXT("ammoLessEqual5"), false);
+    //Goal.Conditions.Add(TEXT("ammoGreater0"), true);
+    //Goal.Conditions.Add(TEXT("hasEnemy"), true);
+    //Goal.Conditions.Add(TEXT("healthGreater50"), true);
+    //Goal.Conditions.Add(TEXT("healthLessEqual30"), false);
+    //Goal.Conditions.Add(TEXT("healthPackNearby"), true);
+    Goal.Conditions.Add(TEXT("isAttacking"), true);
+
+
+    //FString InitialStateString = StateToString(InitialState);
+    //UE_LOG(LogTemp, Warning, TEXT("Initial State: %s"), *InitialStateString);
     
 
 
