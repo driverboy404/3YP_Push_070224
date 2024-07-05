@@ -74,6 +74,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GOAP")
 	TArray<FAction> Actions; // Store actions for easy access
 
+	UPROPERTY(BlueprintReadOnly, Category = "GOAP")
+	TArray<FAction> Actions2; // Store actions for easy access
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GOAP")
 	FWorldState CurrentState;
 

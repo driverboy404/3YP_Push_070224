@@ -472,6 +472,11 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Actions_MetaData[];
 #endif
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_Actions;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Actions2_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Actions2_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_Actions2;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentState_MetaData[];
 #endif
@@ -509,6 +514,20 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions = { "Actions", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGOAPComponent, Actions), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions_MetaData), Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions_MetaData) }; // 2595321673
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2_Inner = { "Actions2", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAction, METADATA_PARAMS(0, nullptr) }; // 2595321673
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2_MetaData[] = {
+		{ "Category", "GOAP" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Store actions for easy access\n" },
+#endif
+		{ "ModuleRelativePath", "GOAPComponent.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Store actions for easy access" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2 = { "Actions2", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGOAPComponent, Actions2), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2_MetaData), Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2_MetaData) }; // 2595321673
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGOAPComponent_Statics::NewProp_CurrentState_MetaData[] = {
 		{ "Category", "GOAP" },
@@ -525,6 +544,8 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGOAPComponent_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGOAPComponent_Statics::NewProp_Actions2,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGOAPComponent_Statics::NewProp_CurrentState,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UGOAPComponent_Statics::StaticCppClassTypeInfo = {
@@ -571,9 +592,9 @@ template<> TYP_13_01_24_API UScriptStruct* StaticStruct<FGoal>()
 		{ FGoal::StaticStruct, Z_Construct_UScriptStruct_FGoal_Statics::NewStructOps, TEXT("Goal"), &Z_Registration_Info_UScriptStruct_Goal, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGoal), 88261655U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGOAPComponent, UGOAPComponent::StaticClass, TEXT("UGOAPComponent"), &Z_Registration_Info_UClass_UGOAPComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGOAPComponent), 4002542876U) },
+		{ Z_Construct_UClass_UGOAPComponent, UGOAPComponent::StaticClass, TEXT("UGOAPComponent"), &Z_Registration_Info_UClass_UGOAPComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGOAPComponent), 1109489135U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_3517271855(TEXT("/Script/TYP_13_01_24"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_1454550027(TEXT("/Script/TYP_13_01_24"),
 		Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_ywe21afu_Documents_UnrealProjects_3YP_SEM2_130124_3YP_Push_070224_TYP_13_01_24_Source_TYP_13_01_24_GOAPComponent_h_Statics::ScriptStructInfo),
 		nullptr, 0);

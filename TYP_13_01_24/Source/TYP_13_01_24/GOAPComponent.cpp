@@ -27,6 +27,7 @@ UGOAPComponent::UGOAPComponent()
     GatherAmmo.Effects.Add(TEXT("ammoLessEqual5"), false);
     GatherAmmo.Cost = 1;
     Actions.Add(GatherAmmo);
+    Actions2.Add(GatherAmmo);
 
 
     FAction GatherHealth;
@@ -37,6 +38,7 @@ UGOAPComponent::UGOAPComponent()
     GatherHealth.Effects.Add(TEXT("healthGreater50"), true);
     GatherHealth.Cost = 1;
     Actions.Add(GatherHealth);
+    Actions2.Add(GatherHealth);
 
 
     FAction MoveToCover;
@@ -47,6 +49,7 @@ UGOAPComponent::UGOAPComponent()
     MoveToCover.Effects.Add(TEXT("hasEnemy"), false);
     MoveToCover.Cost = 1;
     Actions.Add(MoveToCover);
+    Actions2.Add(MoveToCover);
 
 
     FAction WaitAtCover;
@@ -57,6 +60,7 @@ UGOAPComponent::UGOAPComponent()
     WaitAtCover.Effects.Add(TEXT("healthPackNearby"), true);
     WaitAtCover.Cost = 1;
     Actions.Add(WaitAtCover);
+    Actions2.Add(WaitAtCover);
 
 
     FAction AttackEnemy;
@@ -67,6 +71,7 @@ UGOAPComponent::UGOAPComponent()
     AttackEnemy.Effects.Add(TEXT("isAttacking"), true);
     AttackEnemy.Cost = 1;
     Actions.Add(AttackEnemy);
+    Actions2.Add(AttackEnemy);
 
 
     FAction Patrol;
@@ -75,6 +80,23 @@ UGOAPComponent::UGOAPComponent()
     Patrol.Effects.Add(TEXT("hasEnemy"), true);
     Patrol.Cost = 1;
     Actions.Add(Patrol);
+    Actions2.Add(Patrol);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 void UGOAPComponent::BeginPlay()
@@ -169,13 +191,15 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
 {
     TArray<FNode*> OpenList;
 
+    int length = 0;
+
     FString InitialStateString = StateToString(InitialState);
     
     
     FNode* StartNode = new FNode(InitialState, 0, CalculateHeuristic(InitialState, Goal), nullptr, { "", {}, {}, 0 });
     PushNode(OpenList, StartNode);
 
-    while (OpenList.Num() > 0)
+    while (OpenList.Num() > 0 && length < 5)
     {
         FNode* CurrentNode = PopNode(OpenList);
         
@@ -208,6 +232,8 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
                 PushNode(OpenList, NewNode);
             }
         }
+
+        length++;
     }
     
     return {};
@@ -231,7 +257,7 @@ void UGOAPComponent::TestGOAP()
     Goal.Conditions.Add(TEXT("hasEnemy"), true);
 
     
-    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
+    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions2);
 
     
     int32 TotalCost = 0;
