@@ -29,7 +29,7 @@ UGOAPComponent::UGOAPComponent()
 
 
     FAction GatherHealthFromCover;
-    GatherHealthFromCover.Name = TEXT("GatherHealth");
+    GatherHealthFromCover.Name = TEXT("GatherHealthFromCover");
     GatherHealthFromCover.Preconditions.Add(TEXT("healthGreater50"), false);
     GatherHealthFromCover.Preconditions.Add(TEXT("hasEnemy"), false);
     GatherHealthFromCover.Effects.Add(TEXT("healthGreater50"), true);
@@ -43,7 +43,7 @@ UGOAPComponent::UGOAPComponent()
     MoveToCover.Preconditions.Add(TEXT("healthGreater50"), false);
     MoveToCover.Preconditions.Add(TEXT("healthPackNearby"), false);
     MoveToCover.Effects.Add(TEXT("healthPackNearby"), true);
-    MoveToCover.Cost = 1;
+    MoveToCover.Cost = 2;
     Actions.Add(MoveToCover);
     Actions2.Add(MoveToCover) ;
 
@@ -64,7 +64,7 @@ UGOAPComponent::UGOAPComponent()
     AttackEnemy.Preconditions.Add(TEXT("healthGreater50"), true);
     AttackEnemy.Preconditions.Add(TEXT("ammoGreater0"), true);
     AttackEnemy.Effects.Add(TEXT("isAttacking"), true);
-    AttackEnemy.Cost = 100;
+    AttackEnemy.Cost = 1;
     Actions.Add(AttackEnemy);
     Actions2.Add(AttackEnemy);
 
@@ -73,7 +73,7 @@ UGOAPComponent::UGOAPComponent()
     Patrol.Name = TEXT("Patrol");
     Patrol.Preconditions.Add(TEXT("hasEnemy"), false);
     Patrol.Effects.Add(TEXT("hasEnemy"), true);
-    Patrol.Cost = 100;
+    Patrol.Cost = 2;
     Actions.Add(Patrol);
     Actions2.Add(Patrol);
 
