@@ -7,16 +7,6 @@ UGOAPComponent::UGOAPComponent()
 {
     PrimaryComponentTick.bCanEverTick = true;
 
-    // Define initial state
-    //FWorldState InitialState;
-    //InitialState.States.Add(TEXT("lowHealth"), false);
-    //InitialState.States.Add(TEXT("lowAmmo"), true);
-    //InitialState.States.Add(TEXT("hasEnemy"), false);
-
-    
-    //CurrentState.States.Add(TEXT("lowHealth"), false);
-    //CurrentState.States.Add(TEXT("lowAmmo"), true);
-    //CurrentState.States.Add(TEXT("hasEnemy"), false);
 
 
     FAction GatherAmmo;
@@ -38,6 +28,16 @@ UGOAPComponent::UGOAPComponent()
     Actions2.Add(GatherHealth);
 
 
+    FAction GatherHealthFromCover;
+    GatherHealthFromCover.Name = TEXT("GatherHealth");
+    GatherHealthFromCover.Preconditions.Add(TEXT("healthGreater50"), false);
+    GatherHealthFromCover.Preconditions.Add(TEXT("hasEnemy"), false);
+    GatherHealthFromCover.Effects.Add(TEXT("healthGreater50"), true);
+    GatherHealthFromCover.Cost = 1;
+    Actions.Add(GatherHealthFromCover);
+    Actions2.Add(GatherHealthFromCover);
+
+
     FAction MoveToCover;
     MoveToCover.Name = TEXT("MoveToCover");
     MoveToCover.Preconditions.Add(TEXT("healthGreater50"), false);
@@ -45,18 +45,17 @@ UGOAPComponent::UGOAPComponent()
     MoveToCover.Effects.Add(TEXT("healthPackNearby"), true);
     MoveToCover.Cost = 1;
     Actions.Add(MoveToCover);
-    Actions2.Add(MoveToCover)  ;
+    Actions2.Add(MoveToCover) ;
 
 
-    FAction WaitAtCover;
+    /*FAction WaitAtCover;
     WaitAtCover.Name = TEXT("WaitAtCover");
-    //WaitAtCover.Preconditions.Add(TEXT("healthLessEqual30"), false);
     WaitAtCover.Preconditions.Add(TEXT("hasEnemy"), false);
     WaitAtCover.Preconditions.Add(TEXT("healthPackNearby"), false);
     WaitAtCover.Effects.Add(TEXT("healthPackNearby"), true);
     WaitAtCover.Cost = 1;
     Actions.Add(WaitAtCover);
-    Actions2.Add(WaitAtCover);
+    Actions2.Add(WaitAtCover);*/
 
 
     FAction AttackEnemy;
@@ -237,7 +236,7 @@ TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, c
 
 
 
-
+//UNUSED TEST FUNCTION
 void UGOAPComponent::TestGOAP()
 {
     
@@ -253,7 +252,7 @@ void UGOAPComponent::TestGOAP()
     Goal.Conditions.Add(TEXT("hasEnemy"), true);
 
     
-    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions2);
+    TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
 
     
     int32 TotalCost = 0;
@@ -270,30 +269,11 @@ void UGOAPComponent::TestGOAP()
 
 
 
-
+//UNUSED TEST FUNCTION
 void UGOAPComponent::TestGOAP2(FWorldState InitialState){
     FGoal Goal;
-    //Goal.Conditions.Add(TEXT("ammoLessEqual10"), false);
-    //Goal.Conditions.Add(TEXT("ammoLessEqual5"), false);
-    //Goal.Conditions.Add(TEXT("ammoGreater0"), true);
-    //Goal.Conditions.Add(TEXT("hasEnemy"), true);
-    //Goal.Conditions.Add(TEXT("healthGreater50"), true);
-    //Goal.Conditions.Add(TEXT("healthLessEqual30"), false);
-    //Goal.Conditions.Add(TEXT("healthPackNearby"), true);
     Goal.Conditions.Add(TEXT("isAttacking"), true);
-
-
-    //FString InitialStateString = StateToString(InitialState);
-    //UE_LOG(LogTemp, Warning, TEXT("Initial State: %s"), *InitialStateString);
-    
-
-
-
-
-
     TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
-
-
     int32 TotalCost = 0;
     
     for (const auto& Action : PlanActions)
@@ -309,25 +289,10 @@ void UGOAPComponent::TestGOAP2(FWorldState InitialState){
 TArray<FAction> UGOAPComponent::TestGOAP3(FWorldState InitialState)
 {   
     FGoal Goal;
-    //Goal.Conditions.Add(TEXT("ammoLessEqual10"), false);
-    //Goal.Conditions.Add(TEXT("ammoLessEqual5"), false);
-    //Goal.Conditions.Add(TEXT("ammoGreater0"), true);
-    //Goal.Conditions.Add(TEXT("hasEnemy"), true);
-    //Goal.Conditions.Add(TEXT("healthGreater50"), true);
-    //Goal.Conditions.Add(TEXT("healthLessEqual30"), false);
-    //Goal.Conditions.Add(TEXT("healthPackNearby"), true);
+
     Goal.Conditions.Add(TEXT("isAttacking"), true);
     Goal.Conditions.Add(TEXT("healthGreater50"), true);
     Goal.Conditions.Add(TEXT("ammoGreater0"), true);
-
-
-    //FString InitialStateString = StateToString(InitialState);
-    
-
-
-
-
-
 
 
     TArray<FAction> PlanActions = FindPlanAStar(InitialState, Goal, Actions);
