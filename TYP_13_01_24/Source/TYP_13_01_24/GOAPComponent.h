@@ -50,7 +50,7 @@ class TYP_13_01_24_API UGOAPComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
+
 	UGOAPComponent();
 
 	UFUNCTION(BlueprintCallable)
@@ -64,21 +64,19 @@ public:
 	TArray<FAction> TestGOAP3(FWorldState InitialState);
 
 protected:
-	// Called when the game starts
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintCallable, Category = "GOAP")
 	TArray<FAction> FindPlanAStar(const FWorldState& InitialState, const FGoal& Goal, const TArray<FAction>& Actions);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GOAP")
-	TArray<FAction> Actions; // Store actions for easy access
+	TArray<FAction> Actions; 
 
 	UPROPERTY(BlueprintReadOnly, Category = "GOAP")
-	TArray<FAction> Actions2; // Store actions for easy access
+	TArray<FAction> Actions2; 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GOAP")
 	FWorldState CurrentState;
@@ -91,7 +89,6 @@ private:
 	int32 CalculateHeuristic(const FWorldState& State, const FGoal& Goal) const;
 	FString StateToString(const FWorldState& State) const;
 
-	// Custom priority queue implementation
 	void PushNode(TArray<struct FNode*>& Queue, struct FNode* Node);
 	struct FNode* PopNode(TArray<struct FNode*>& Queue);
 

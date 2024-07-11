@@ -3,6 +3,8 @@
 
 #include "GOAPComponent.h"
 
+
+//Constructor, setting up the actions that the GOAP NPC can do
 UGOAPComponent::UGOAPComponent()
 {
     PrimaryComponentTick.bCanEverTick = true;
@@ -48,15 +50,6 @@ UGOAPComponent::UGOAPComponent()
     Actions2.Add(MoveToCover) ;
 
 
-    /*FAction WaitAtCover;
-    WaitAtCover.Name = TEXT("WaitAtCover");
-    WaitAtCover.Preconditions.Add(TEXT("hasEnemy"), false);
-    WaitAtCover.Preconditions.Add(TEXT("healthPackNearby"), false);
-    WaitAtCover.Effects.Add(TEXT("healthPackNearby"), true);
-    WaitAtCover.Cost = 1;
-    Actions.Add(WaitAtCover);
-    Actions2.Add(WaitAtCover);*/
-
 
     FAction AttackEnemy;
     AttackEnemy.Name = TEXT("AttackEnemy");
@@ -77,23 +70,11 @@ UGOAPComponent::UGOAPComponent()
     Actions.Add(Patrol);
     Actions2.Add(Patrol);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
+
+
+//Implementation for this is in the blueprint
 void UGOAPComponent::BeginPlay()
 {
     Super::BeginPlay();
@@ -101,6 +82,9 @@ void UGOAPComponent::BeginPlay()
 
 }
 
+
+
+//Checks if all of an actions preconditions are met with a given world state
 bool UGOAPComponent::CheckPreconditions(const FWorldState& State, const TMap<FString, bool>& Preconditions) const
 {
     for (const auto& Precondition : Preconditions)
@@ -114,6 +98,8 @@ bool UGOAPComponent::CheckPreconditions(const FWorldState& State, const TMap<FSt
     return true;
 }
 
+
+//Applies all of the effects of an action to an NPCs world state
 void UGOAPComponent::ApplyEffects(FWorldState& State, const TMap<FString, bool>& Effects) const
 {
     for (const auto& Effect : Effects)
@@ -122,6 +108,9 @@ void UGOAPComponent::ApplyEffects(FWorldState& State, const TMap<FString, bool>&
     }
 }
 
+
+
+//Calculates the heuristic for a node - calculated as +1 for every state that differs from the goal states
 int32 UGOAPComponent::CalculateHeuristic(const FWorldState& State, const FGoal& Goal) const
 {
     int32 Heuristic = 0;
@@ -136,6 +125,10 @@ int32 UGOAPComponent::CalculateHeuristic(const FWorldState& State, const FGoal& 
     return Heuristic;
 }
 
+
+
+
+//Debug function to print out a given world state
 FString UGOAPComponent::StateToString(const FWorldState& State) const
 {
     FString Result;
@@ -146,6 +139,10 @@ FString UGOAPComponent::StateToString(const FWorldState& State) const
     return Result;
 }
 
+
+
+
+//Struct used in the linked list of actions used for a full plan
 struct FNode
 {
     FWorldState State;
@@ -158,6 +155,10 @@ struct FNode
         : State(_State), Cost(_Cost), Heuristic(_Heuristic), Parent(_Parent), Action(_Action) {}
 };
 
+
+
+
+//Functions used to create a priority queue needed for the planning method
 void UGOAPComponent::PushNode(TArray<FNode*>& Queue, FNode* Node)
 {
     Queue.Add(Node);
@@ -182,6 +183,7 @@ FNode* UGOAPComponent::PopNode(TArray<FNode*>& Queue)
 
 
 
+// Function to create a plan based on a given start world state, a target state, and a set of actions
 TArray<FAction> UGOAPComponent::FindPlanAStar(const FWorldState& InitialState, const FGoal& Goal, const TArray<FAction>& MyActions)
 {
     TArray<FNode*> OpenList;
@@ -286,6 +288,9 @@ void UGOAPComponent::TestGOAP2(FWorldState InitialState){
 
 
 
+
+
+//Function used in blueprint code to return a plan for the NPC to perform
 TArray<FAction> UGOAPComponent::TestGOAP3(FWorldState InitialState)
 {   
     FGoal Goal;
