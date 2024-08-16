@@ -39,6 +39,12 @@
     <ClInclude Include="..\..\Source\TYP_13_01_24\BTT_FindPlayer.h">
       <Filter>Source\TYP_13_01_24</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TYP_13_01_24\FileHandler.cpp">
+      <Filter>Source\TYP_13_01_24</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TYP_13_01_24\FileHandler.h">
+      <Filter>Source\TYP_13_01_24</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TYP_13_01_24\GOAPComponent.cpp">
       <Filter>Source\TYP_13_01_24</Filter>
     </ClCompile>

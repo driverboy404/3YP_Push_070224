@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\filehandler.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\typ_13_01_24editor\\development\\unrealed\\sharedpch.unrealed.cpp17.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\typ_13_01_24\\definitions.typ_13_01_24.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\filehandler.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealeditor\\inc\\typ_13_01_24\\uht\\filehandler.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
