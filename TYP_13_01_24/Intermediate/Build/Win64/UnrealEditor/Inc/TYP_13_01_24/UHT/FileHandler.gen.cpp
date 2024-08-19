@@ -107,14 +107,8 @@ void EmptyLinkFunctionForGeneratedCodeFileHandler() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFileHandler_WriteValues_Statics::Function_MetaDataParams[] = {
 		{ "Category", "File Handling" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Expose this function to Blueprints\n" },
-#endif
 		{ "CPP_Default_Append", "false" },
 		{ "ModuleRelativePath", "FileHandler.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Expose this function to Blueprints" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFileHandler_WriteValues_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UFileHandler, nullptr, "WriteValues", nullptr, nullptr, Z_Construct_UFunction_UFileHandler_WriteValues_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFileHandler_WriteValues_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFileHandler_WriteValues_Statics::FileHandler_eventWriteValues_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFileHandler_WriteValues_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFileHandler_WriteValues_Statics::Function_MetaDataParams) };
@@ -150,7 +144,7 @@ void EmptyLinkFunctionForGeneratedCodeFileHandler() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFileHandler_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UFileHandler_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UFileHandler_WriteValues, "WriteValues" }, // 266592502
+		{ &Z_Construct_UFunction_UFileHandler_WriteValues, "WriteValues" }, // 277933655
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFileHandler_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -197,9 +191,9 @@ void EmptyLinkFunctionForGeneratedCodeFileHandler() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TYP_13_01_24_Source_TYP_13_01_24_FileHandler_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UFileHandler, UFileHandler::StaticClass, TEXT("UFileHandler"), &Z_Registration_Info_UClass_UFileHandler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFileHandler), 3332006847U) },
+		{ Z_Construct_UClass_UFileHandler, UFileHandler::StaticClass, TEXT("UFileHandler"), &Z_Registration_Info_UClass_UFileHandler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFileHandler), 747387874U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TYP_13_01_24_Source_TYP_13_01_24_FileHandler_h_3771450790(TEXT("/Script/TYP_13_01_24"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TYP_13_01_24_Source_TYP_13_01_24_FileHandler_h_2878620820(TEXT("/Script/TYP_13_01_24"),
 		Z_CompiledInDeferFile_FID_TYP_13_01_24_Source_TYP_13_01_24_FileHandler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TYP_13_01_24_Source_TYP_13_01_24_FileHandler_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
