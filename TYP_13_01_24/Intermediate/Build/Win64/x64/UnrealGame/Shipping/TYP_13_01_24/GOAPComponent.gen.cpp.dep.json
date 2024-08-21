@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealgame\\inc\\typ_13_01_24\\uht\\goapcomponent.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\typ_13_01_24\\shipping\\engine\\sharedpch.engine.cpp17.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\unrealgame\\shipping\\typ_13_01_24\\definitions.typ_13_01_24.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\goapcomponent.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealgame\\inc\\typ_13_01_24\\uht\\goapcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
