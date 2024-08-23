@@ -74,3 +74,6 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 *.log
 TYP_13_01_24/Saved/Logs/TYP_13_01_24.log
+TYP_13_01_24/Binaries/Win64/TYP_13_01_24-Win64-Shipping.pdb
+*.pdb
+*.ucas

@@ -1,0 +1,31 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\typ_13_01_24gamemode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\typ_13_01_24\\development\\engine\\sharedpch.engine.cpp17.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\x64\\unrealgame\\development\\typ_13_01_24\\definitions.typ_13_01_24.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\typ_13_01_24gamemode.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealgame\\inc\\typ_13_01_24\\uht\\typ_13_01_24gamemode.generated.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\source\\typ_13_01_24\\typ_13_01_24character.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\uht\\character.generated.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "d:\\unrealengine\\ue_5.3\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealgame\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h",
+            "c:\\users\\andrew\\onedrive\\documents\\github\\3yp_push_070224\\typ_13_01_24\\intermediate\\build\\win64\\unrealgame\\inc\\typ_13_01_24\\uht\\typ_13_01_24character.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
